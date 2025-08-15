@@ -12,3 +12,10 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+  sql:
+    init:
+      mode: ALWAYS
+      schema-locations:
+        - 'classpath:db/schema.sql'
+      data-locations:
+        - 'classpath:db/data.sql'
