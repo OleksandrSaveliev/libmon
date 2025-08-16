@@ -30,7 +30,6 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "user")
-    @JoinColumn(name = "user_id")
     private List<Book> books;
 
     @Override

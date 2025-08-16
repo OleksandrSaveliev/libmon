@@ -4,6 +4,7 @@ import com.app.library.event.BookRentedEvent;
 import com.app.library.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/api/books")
 public class BookController {
-    private BookService bookService;
-    private ApplicationEventPublisher publisher;
+    private final BookService bookService;
+    private final ApplicationEventPublisher publisher;
 
-    @RequestMapping("/rent")
+    @PostMapping("/rent")
     public String rentBook(@RequestParam int bookId, @RequestParam int userId) {
         boolean isRented = bookService.rentBook(bookId);
 

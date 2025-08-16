@@ -13,7 +13,7 @@ import java.util.Objects;
 public class Stat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "s_id")
     private int id;
 
     @Column(name = "total_users")
